@@ -45,4 +45,11 @@ public class Hometask {
     public void setTextOfHometask(String textOfHometask) {
         this.textOfHometask = textOfHometask;
     }
+
+    public String myToString(){
+        String out;
+        System.out.println();
+        out = "Hometask theme: " + theme + "; Number: " + number + "; Header: " + header + "; Text: " + textOfHometask;
+        return out;
+    }
 }

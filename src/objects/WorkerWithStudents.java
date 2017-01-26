@@ -1,6 +1,39 @@
 package objects;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.List;
+
 public class WorkerWithStudents {
+
+
+    //List<Student> students = new ArrayList<Student>();
+
+    /*
+    public List<Student> getSuccessfullStudents(List<Student> students, Group group, double minScore){
+
+        for (int i=0; i<group.getArrayOfStudents().length; i++){
+            if (getStudentsMedialScore(group.getArrayOfStudents()[i]) > minScore){
+                students.add(group.getArrayOfStudents()[i]);
+            }
+        }
+        return students;
+    }
+    */
+
+
+    public Student[] getSuccessfullStudents(Student[] students, Group group, double minScore){
+
+        for (int i=0; i<group.getArrayOfStudents().length; i++){
+            if (getStudentsMedialScore(group.getArrayOfStudents()[i]) > minScore){
+                Arrays.copyOf(students, students.length+1);
+                students[students.length-1] = group.getArrayOfStudents()[i];
+            }
+        }
+
+        return students;
+    }
 
     public double getStudentsMedialScore(Student student) {
         int sum = 0;

@@ -1,6 +1,8 @@
 package objects;
 
 
+import java.util.Calendar;
+
 public class Group {
 
     private int number;
@@ -44,5 +46,11 @@ public class Group {
         this.faculty = faculty;
     }
 
+    public String myToString(){
+        String out;
+        System.out.println();
+        out = "Group number: " + number + "; Faculty: " + faculty + "; Amount of students in group: " + amount;
+        return out;
+    }
 
 }
