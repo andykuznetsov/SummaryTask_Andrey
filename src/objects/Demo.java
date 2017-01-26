@@ -1,7 +1,8 @@
 package objects;
 
+
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class Demo {
     public static void main(String[] args) {
@@ -17,27 +18,27 @@ public class Demo {
         int[] myHometsksScores2 =  {3, 4, 5};
         int[] myHometsksScores3 =  {5, 3, 1};
 
+
         SimpleDateFormat firstDate = new SimpleDateFormat("01.01.1990");
         SimpleDateFormat secondDate = new SimpleDateFormat("05.05.1995");
         SimpleDateFormat thirdDate = new SimpleDateFormat("09.09.1996");
 
         Student student1 = new Student(1, "Ivan", "Ivanov", firstDate,  myArrayOfHometasks, myHometsksScores1);
         Student student2 = new Student(2, "Petro", "Petrov", secondDate, myArrayOfHometasks, myHometsksScores2);
-        Student student3 = new Student(3, "Somename", "Somesecondname", thirdDate, myArrayOfHometasks, myHometsksScores3);
+        Student student3 = new Student(3, "Olexandr", "Olexandrov", thirdDate, myArrayOfHometasks, myHometsksScores3);
 
         Student[] myArrayOfStudents = {student1, student2, student3};
 
 
         WorkerWithStudents myWorker = new WorkerWithStudents();
-        System.out.println(myWorker.getStudentsMedialScore(myArrayOfStudents[1]));
 
         Group group1 = new Group(13, "CS", myArrayOfStudents);
 
         System.out.println(myWorker.getGroupsMedialScore(group1));
 
-        System.out.println(student1.myToString());
-        System.out.println(student2.myToString());
-        System.out.println(student3.myToString());
+        System.out.println(student1.myToString() + " Medial Score: " + myWorker.getStudentsMedialScore(myArrayOfStudents[0]));
+        System.out.println(student2.myToString() + " Medial Score: " + myWorker.getStudentsMedialScore(myArrayOfStudents[1]));
+        System.out.println(student3.myToString() + " Medial Score: " + myWorker.getStudentsMedialScore(myArrayOfStudents[2]));
 
     }
 }

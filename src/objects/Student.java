@@ -1,5 +1,6 @@
 package objects;
 
+import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
 
@@ -52,11 +53,16 @@ public class Student {
     }
 
 
+
     public String myToString(){
         String out;
-        out = numberInGroup + ") " + firstName + " " + secondName + " " + dateOfBirth.toString() + " " + arrayOfHometasks.toString() + " " + hometasksScores.toString() ;
+        System.out.println();
+        out = numberInGroup + ") " + firstName + " " + secondName + "; " + dateOfBirth.format(Calendar.getInstance().getTime()) + ";";
         return out;
     }
+
+
+
 
 
 
