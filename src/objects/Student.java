@@ -52,6 +52,12 @@ public class Student {
     }
 
 
+    public String myToString(){
+        String out;
+        out = numberInGroup + ") " + firstName + " " + secondName + " " + dateOfBirth.toString() + " " + arrayOfHometasks.toString() + " " + hometasksScores.toString() ;
+        return out;
+    }
+
 
 
 

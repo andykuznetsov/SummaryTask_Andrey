@@ -1,6 +1,7 @@
 package objects;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Demo {
     public static void main(String[] args) {
@@ -32,6 +33,11 @@ public class Demo {
 
         Group group1 = new Group(13, "CS", myArrayOfStudents);
 
+        System.out.println(myWorker.getGroupsMedialScore(group1));
+
+        System.out.println(student1.myToString());
+        System.out.println(student2.myToString());
+        System.out.println(student3.myToString());
 
     }
 }
