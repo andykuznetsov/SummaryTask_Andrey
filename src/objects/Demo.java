@@ -1,8 +1,9 @@
 package objects;
 
 
+import workers.WorkerWithStudents;
+
 import java.text.SimpleDateFormat;
-import java.util.List;
 
 
 public class Demo {
@@ -51,6 +52,6 @@ public class Demo {
 
         //List<Student> succesfullStudents = null;
         Student[] succesfullStudents = null;
-        System.out.println(myWorker.getSuccessfullStudents(succesfullStudents, group1, 3));
+        System.out.println(myWorker.getSuccessfullStudents(succesfullStudents, group1, 0, 3));
     }
 }

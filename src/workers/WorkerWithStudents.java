@@ -1,4 +1,7 @@
-package objects;
+package workers;
+
+import objects.Group;
+import objects.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,14 +26,14 @@ public class WorkerWithStudents {
     */
 
 
-    public Student[] getSuccessfullStudents(Student[] students, Group group, double minScore){
+    public Student[] getSuccessfullStudents(Student[] students, Group group, int index, double minScore){
 
-        for (int i=0; i<group.getArrayOfStudents().length; i++){
-            if (getStudentsMedialScore(group.getArrayOfStudents()[i]) > minScore){
-                Arrays.copyOf(students, students.length+1);
-                students[students.length-1] = group.getArrayOfStudents()[i];
+            if (getStudentsMedialScore(group.getArrayOfStudents()[index]) > minScore) {
+                Arrays.copyOf(students, students.length + 1);
+                students[students.length - 1] = group.getArrayOfStudents()[index];
             }
-        }
+
+            getSuccessfullStudents(students, group, index+1, minScore);
 
         return students;
     }
