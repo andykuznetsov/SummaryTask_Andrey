@@ -4,6 +4,7 @@ package objects;
 import workers.WorkerWithStudents;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 
 public class Demo {
@@ -50,8 +51,12 @@ public class Demo {
             System.out.println(myArrayOfHometasks[i].myToString());
         }
 
-        //List<Student> succesfullStudents = null;
-        Student[] succesfullStudents = null;
-        System.out.println(myWorker.getSuccessfullStudents(succesfullStudents, group1, 0, 3));
+        System.out.println();
+
+        ArrayList<Student> listOfSuccesfullStudents = new ArrayList<Student>();
+        // Student[] succesfullStudents = new Student[group1.getArrayOfStudents().length];
+       // System.out.println(myWorker.getSuccessfullStudents(succesfullStudents, group1, 0, 0, 3));
+        System.out.println(myWorker.getListOfSuccessfullStudents(listOfSuccesfullStudents, group1, 0, 4.0));
     }
+
 }

@@ -4,36 +4,45 @@ import objects.Group;
 import objects.Student;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.List;
 
 public class WorkerWithStudents {
 
 
     //List<Student> students = new ArrayList<Student>();
 
-    /*
-    public List<Student> getSuccessfullStudents(List<Student> students, Group group, double minScore){
 
-        for (int i=0; i<group.getArrayOfStudents().length; i++){
-            if (getStudentsMedialScore(group.getArrayOfStudents()[i]) > minScore){
-                students.add(group.getArrayOfStudents()[i]);
-            }
+    public ArrayList<Student> getListOfSuccessfullStudents(ArrayList<Student> students, Group group, int i, double minScore){
+
+        if (i == group.getArrayOfStudents().length){
+            return students;
         }
+
+        if (getStudentsMedialScore(group.getArrayOfStudents()[i]) >= minScore){
+            students.add(group.getArrayOfStudents()[i]);
+        //    i++;
+        }
+
+        students = getListOfSuccessfullStudents(students, group, i+1, minScore);
+
         return students;
     }
-    */
 
 
-    public Student[] getSuccessfullStudents(Student[] students, Group group, int index, double minScore){
 
+    public Student[] getSuccessfullStudents(Student[] students, Group group, int index, int setIndex, double minScore){
+            //int setIndex = index;
             if (getStudentsMedialScore(group.getArrayOfStudents()[index]) > minScore) {
-                Arrays.copyOf(students, students.length + 1);
-                students[students.length - 1] = group.getArrayOfStudents()[index];
+                //Arrays.copyOf(students, students.length + 1);
+                //students[students.length - 1] = group.getArrayOfStudents()[index];
+                students[setIndex] = group.getArrayOfStudents()[index];
+                setIndex++;
             }
 
-            getSuccessfullStudents(students, group, index+1, minScore);
+            students = getSuccessfullStudents(students, group, index+1, setIndex, minScore);
+
+        if (index == group.getArrayOfStudents().length) {
+            return students;
+        }
 
         return students;
     }
